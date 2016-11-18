@@ -1,0 +1,16 @@
+1 ,执行顺序
+	Try{
+		//1.方法开始可以记录一下日志
+		@Before : 前置通知
+		result = method.invok(calculator , args);
+		@AfterReturning : 返回通知
+   }catch{
+	    @AfterThrowing : 异常通知
+   }finally{
+	    @After : 后置通知
+   }
+（1），正常执行：前置通知--目标方法-后置通知--返回通知
+（2），方法异常：前置通知--目标方法-后置通知--异常通知
+
+2，切入点表达式：指定我们要切入的位置
+	语法： value=“execution([权限修饰符]  [返回值类型]  [简单类名/全类名].[方法名]([参数列表] ) )”
